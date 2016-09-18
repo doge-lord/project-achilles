@@ -23,10 +23,8 @@ gulp.task('compile', function () {
 
     return merge([
         tsResult.dts
-            .pipe(concat('project-achilles.d.ts'))
-            .pipe(gulp.dest('./release')),
+            .pipe(gulp.dest('./dist')),
         tsResult.js
-            .pipe(concat('project-achilles.js'))
-            .pipe(gulp.dest('./release'))
+            .pipe(gulp.dest('./dist'))
     ]);
 });
