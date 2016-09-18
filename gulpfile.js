@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var concat = require('gulp-concat');
 var ts = require('gulp-typescript');
 var merge = require('merge2');
 
@@ -16,10 +17,16 @@ gulp.task('compile', function () {
         declaration: true
     });
     var tsResult = tsProject.src()
-        .pipe(ts(tsProject));
+        .pipe(ts(tsProject, {
+            sortOutput: true
+        }));
 
     return merge([
-        tsResult.dts.pipe(gulp.dest('./release/definitions')),
-        tsResult.js.pipe(gulp.dest('./release/js'))
+        tsResult.dts
+            .pipe(concat('project-achilles.d.ts'))
+            .pipe(gulp.dest('./release')),
+        tsResult.js
+            .pipe(concat('project-achilles.js'))
+            .pipe(gulp.dest('./release'))
     ]);
 });
