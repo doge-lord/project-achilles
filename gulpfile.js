@@ -13,7 +13,7 @@ gulp.task('watch', ['compile'], function () {
 });
 
 gulp.task('compile', function () {
-    var tsProject = ts.createProject('./tsconfig.json', {
+    var tsProject = ts.createProject('./src/tsconfig.json', {
         declaration: true
     });
     var tsResult = tsProject.src()
