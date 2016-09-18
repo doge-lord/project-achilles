@@ -1,0 +1,25 @@
+{
+  "name": "project-achilles",
+  "version": "0.0.1",
+  "description": "Party Game Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Party",
+    "Game",
+    "PartyGame"
+  ],
+  "author": "Doge Lord",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.13.6",
+    "merge2": "^1.0.2",
+    "tslint": "^3.13.0"
+  },
+  "dependencies": {
+    "lodash": "^4.15.0"
+  }
+}
